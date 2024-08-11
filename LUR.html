@@ -1,0 +1,103 @@
+import os
+
+# Creating the folder structure
+base_folder = '/mnt/data/website_project'
+
+# Folders for different files
+os.makedirs(f'{base_folder}/css', exist_ok=True)
+os.makedirs(f'{base_folder}/js', exist_ok=True)
+os.makedirs(f'{base_folder}/images', exist_ok=True)
+
+# Creating the HTML file
+html_content = """<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>My Website</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="content.html">Content</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Welcome to My Website</h2>
+        <p>This is where your content will go.</p>
+        <div id="ppt-container">
+            <h3>Presentation</h3>
+            <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vT-vsEJxGpU75iKgSFe62_JpHMo3phuYPF9sRMCnJmgsFQmWZ-QQleDpAlkpsMSgFoYDiFCjRniodWc/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+        </div>
+        <div id="excel-container">
+            <h3>Excel Sheet</h3>
+            <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yqZAdLwM5Rn6bbZGlGhr3vTjNR4-TwYF8o1WZaaTTS4jZQG9BpGXUgUeG7eAIWi3YeQaC7oa1JG9/pubhtml?widget=true&amp;headers=false"></iframe>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 My Website</p>
+    </footer>
+</body>
+</html>"""
+
+with open(f'{base_folder}/index.html', 'w') as file:
+    file.write(html_content)
+
+# Creating the CSS file
+css_content = """body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #444;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    padding: 10px 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}"""
+
+with open(f'{base_folder}/css/styles.css', 'w') as file:
+    file.write(css_content)
+
+# No JavaScript is used in this example, so no JS file is created
+
+base_folder
